@@ -1,0 +1,238 @@
+<section class="banner-main">
+  <div id="bannerslider" class="carousel slide h-100" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button
+        type="button"
+        *ngFor="let image of topBanners; let i = index"
+        [attr.data-bs-target]="'#bannerslider'"
+        [attr.data-bs-slide-to]="i"
+        [class.active]="i === 0"
+        [attr.aria-current]="i === 0"
+        [attr.aria-label]="'Slide ' + (i)"
+      ></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active h-100">
+        <div class="container">
+          <img
+            src="../assets/text-img.png"
+            alt=""
+            class="text-img img-fluid position-absolute"
+          />
+        </div>
+        <img
+          src="../assets/bg/orage-slider.png"
+          class="d-block w-100 h-100"
+          alt="..."
+        />
+      </div>
+      <div class="carousel-item h-100" *ngFor="let image of topBanners; let i = index">
+        <img [src]="assets_url + image.img" class="d-block w-100 h-100" alt="...">
+      </div>
+    </div>
+  </div>
+</section>
+<main class="bg-gray">
+  <section class="youth-club-section">
+    <div class="container">
+      <div class="detail-text">
+        <h3>સારહી યુથ ક્લબ વિશે</h3>
+        <p>
+          "સેવા પરમો ધર્મ" અને રાષ્ટ્રવાદના વિચારને કેન્દ્રમાં રાખી 1991માં
+          સારહી યુથ ક્લબની રચના કરવામાં આવી હતી.નાના સ્તરે શરૂ કરવામાં આવેલ
+          વિવિધ સાંસ્કૃતિક, સેવાકીય અને સામાજિક પ્રવૃત્તિને મુકેશભાઈ સંઘાણીના
+          નેતૃત્વમાં ઉત્તમ વ્યવસ્થાના ફ્રેમવર્ક વડે વ્યાપક સ્તરે આગળ વધારવામાં
+          આવી રહી છે.સેવાકીય - સામાજિક પ્રવૃત્તિની સાથો સાથે કુદરતી આપદા સમયે
+          જરૂરીયાતમંદ લોકો માટે શક્ય એટલી વધુ મદદરૂપ થવાના કાર્યો આ સંસ્થા કરી
+          રહી છે.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="section-youth-club-bottom">
+    <div class="container">
+      <div class="detail-quotes">
+        <div class="row align-items-center">
+          <div class="col-md-8 order-2 order-md-1">
+            <div class="text">
+              <img
+                src="../assets/quote.png"
+                alt=""
+                class="img-fluid quote-img"
+              />
+              <p>
+                જરૂરિયાતમંદ લોકો પ્રત્યે સહકાર અને સેવાની ભાવનાન ધરાવતા
+                વ્યક્તિનું જીવન વ્યર્થ છે.જરૂરીયાતમંદ લોકો વિશે વિચારવાનું એમના
+                પ્રત્યે સંવેદનશીલ બનવાના પ્રયત્નો કરો ત્યારે એમાંથી " નિસ્વાર્થ
+                સેવા "ની શરૂઆત થાય છે..
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4 order-1 order-md-2">
+            <div class="image-wrap">
+              <img src="../assets/Img_pattern.png" alt="" class="pattern" />
+              <img
+                src="../assets/Img_Mukesh Sanghani.png"
+                alt=""
+                class="img-fluid"
+              />
+              <h5 class="name">મુકેશ સંઘાણી</h5>
+              <p class="subname">પ્રમુખશ્રી સારહી યુથ ક્લબ, અમરેલી</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<section class="top-story-section" id="gallery">
+  <div class="container-fluid px-0 text-center">
+    <h3 class="title">ટોપ સ્ટોરી</h3>
+    <!--  slider -->
+    <div id="top-story-slider">
+      <div class="columns">
+        <div class="loop">
+          <owl-carousel-o [options]="topStoriesOptions">
+            <ng-container *ngFor="let slide of allGallery; let i = index">
+              <ng-template carouselSlide [id]="i.toString()">
+                <img [src]="assets_url + slide.img" [alt]="slide.alt" />
+              </ng-template>
+            </ng-container>
+          </owl-carousel-o>
+        </div>
+        <div class="bottom-shadow"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sevakiya-pravruti-section" id="social-activity">
+  <div class="container">
+    <h2 class="title">સેવાકીય પ્રવૃત્તિ</h2>
+    <div class="group-box-items">
+      <ng-container *ngFor="let item of allSocialActivities">
+        <a routerLink="{{ item.slug }}" style="color: #fff">
+          <div class="card">
+            <h6 class="card-title">{{ item.title }}</h6>
+          </div>
+        </a>
+      </ng-container>
+    </div>
+  </div>
+</section>
+
+<section class="samajik-pravruti-section" id="extra-activity">
+  <div class="container">
+    <h2 class="title text-center">સામાજિક પ્રવૃત્તિ</h2>
+    <div class="row align-items-center desc-wrap">
+      <div class="col-md-5 text-center">
+        <img src="../assets/samajik-pravruti.png" alt="" class="img-fluid" />
+      </div>
+      <div class="col-md-7 sanstha-details">
+        <h4 class="title">
+          સંસ્થા દ્વારા લોકહિતાર્થે અવિરત સામાજિક પ્રવૃતિઓ ચાલતી રહે છે.
+        </h4>
+        <ul class="pravruti-list">
+          <li>
+            વિવિધ સ્તરે પોલિયો કેમ્પ , એઈડ્સ જેવી મહામારી સામે એન.જી.ઓ ,શાળા
+            કોલેજોને સાથે રાખી સામુહિક જનજાગૃતિ અભિયાન.
+          </li>
+          <li>
+            નાગરિકો અને વિદ્યાર્થીઓમાં રાષ્ટ્વાદની ભાવના પ્રજ્વલિત રાખવા
+            દેશભક્તિ સંલગ્ન આયોજનો.
+          </li>
+        </ul>
+        <a href="./samajik-pravuti.html">
+          <button class="btn btn-outline mt-3" type="button">View more</button>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="counter-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-6">
+        <div class="count-box">
+          <img src="../assets/icon/icon-1.png" alt="" class="img-fluid" />
+          <div class="desc">
+            <div class="number">23</div>
+            <span class="name">વર્ષ</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="count-box">
+          <img src="../assets/icon/icon-4.png" alt="" class="img-fluid" />
+          <div class="desc">
+            <div class="number">250+</div>
+            <span class="name">વોલેન્ટીયર</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="count-box">
+          <img src="../assets/icon/icon-2.png" alt="" class="img-fluid" />
+          <div class="desc">
+            <div class="number">120+</div>
+            <span class="name">કાર્યકમો</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="count-box">
+          <img src="../assets/icon/icon-3.png" alt="" class="img-fluid" />
+          <div class="desc">
+            <div class="number">3000+</div>
+            <span class="name">લાભાર્થી</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="donate-section">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <img src="../assets/Img_Vactor.png" alt="" class="img-fluid" />
+      </div>
+      <div class="col-md-6">
+        <h2 class="title">
+          ફૂલ નહિ ફૂલ ની પાંખડી ચાલો બનીએ જરૂરિયાત મંદ ની લાકડી
+        </h2>
+        <button class="btn btn-outline mt-4" type="button">Donate us</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials-section text-center">
+  <div class="container">
+    <h2 class="title">Testimonials</h2>
+    <div class="testimonials-carousel">
+      <owl-carousel-o [options]="testimonialsOptions">
+        <ng-container *ngFor="let slide of allTestimonials; let i = index">
+          <ng-template carouselSlide [id]="i.toString()">
+            <figure>
+              <div class="snip-box">
+                <h5>લોકસેવા</h5>
+                <p>
+                  સારહી યુથ ક્લબ હમેશા લોકસેવાના<br />
+                  કાર્ય માં અગ્રેસર રહ્યું છે.
+                </p>
+                <div class="arrow"></div>
+              </div>
+              <div class="author">
+                <img src="../assets/Img_Testimonial.png" alt="" />
+                <span> હરિભાઈ બમ્ભરોલીયા</span>
+              </div>
+            </figure>
+          </ng-template>
+        </ng-container>
+      </owl-carousel-o>
+    </div>
+  </div>
+</section>
