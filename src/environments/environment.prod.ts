@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  BASE_API_URL: "https://shielded-mesa-82462.herokuapp.com",
-  API_URL: "https://shielded-mesa-82462.herokuapp.com/api",
-  API_TOKEN: "2a6ac1f1316ad945c8cfd4c862eafaa4c9d73a6a69ed691e4dd6ab6bf10347f79bb422c1cb7d9b05fc3b3bbba2f5c27243fbcf256a4c26d852a2b32830c1e9129700ec69476be2a9a91a4ffcb513f341609e12fc2037a7bafdfa403ad8fc4d2a8c14f0c10c1ec2afdb57c32a0cbf94cf19ad74cc0ca35818e58976d77de67f91"
+  BASE_API_URL: "https://sarhi-admin.onrender.com",
+  API_URL: "https://sarhi-admin.onrender.com/api",
+  API_TOKEN: "6d31dceeb2cf81335bade1e9724dd4f3477d59e568702ef590b7c6b2d357e29b04636b13a2c9870d727bd3483cf2d3cac98fd0751d504a95dd22e26ca39f03688e0287a305a947ce04f9d288dd1411508b20b791367f280fdf4b496a98264be7ebbb7a3d7b5eb04c926ead7c48685dae16906098863f27de7789c48db8a9199b"
 };
